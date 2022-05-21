@@ -1,0 +1,57 @@
+@import url('https://fonts.googleapis.com/css2?family=Fira+Sans:wght@300&family=Poppins:wght@300&display=swap');
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+.root-container
+{
+    height: 100vh;
+    width: 100%;
+    background-color: #011627;
+    display: flex;
+}
+.root-left
+{
+    height: 100vh;
+    width: 20%;
+    border-right: 1px solid #474747;
+}
+.root-right
+{
+    height: 100vh;
+    width: 80%;
+}
+.root-left-top
+{
+    min-height: 7%;
+    width: 100%;
+    border-bottom: 1px solid #474747;
+}
+.root-right-top
+{
+    min-height: 7%;
+    width: 100%;
+    border-bottom: 1px solid #474747;
+    display: flex;
+}
+.tab-item
+{
+    color: #607b96;
+    min-width: 150px;
+    border-right: 1px solid #474747;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.selected-tab-item
+{
+    border-bottom: 2px solid #fea55f;
+    color: white;
+}
+.root-right-content
+{
+    height: 93%;
+}
+
+
