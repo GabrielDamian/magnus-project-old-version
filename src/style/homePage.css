@@ -28,30 +28,11 @@
     width: 100%;
     border-bottom: 1px solid #474747;
 }
-.root-right-top
-{
-    min-height: 7%;
-    width: 100%;
-    border-bottom: 1px solid #474747;
-    display: flex;
-}
-.tab-item
-{
-    color: #607b96;
-    min-width: 150px;
-    border-right: 1px solid #474747;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-.selected-tab-item
-{
-    border-bottom: 2px solid #fea55f;
-    color: white;
-}
+
 .root-right-content
 {
     height: 93%;
+    overflow: hidden;
 }
 
 

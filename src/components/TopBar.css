@@ -1,0 +1,44 @@
+.root-right-top
+{
+    min-height: 7%;
+    width: 100%;
+    border-bottom: 1px solid #474747;
+    display: flex;
+}
+.tab-item
+{
+    color: #607b96;
+    min-width: 150px;
+    border-right: 1px solid #474747;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+}
+.selected-tab-item
+{
+    color: white;
+}
+.tab-item-center
+{
+    height: 98%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: color 0.4s ease;
+}
+.border-bottom-selected
+{
+    height: 2px;
+    width: 100%;
+}
+.bg-selected
+{
+    background-color: #fea55f;
+    transition: background-color 0.4s ease;
+}
+.color-white
+{
+    color: white;
+}

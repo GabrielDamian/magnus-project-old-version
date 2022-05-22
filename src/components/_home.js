@@ -1,8 +1,83 @@
-import React from 'react';
+import React,{useState,useEffect} from 'react';
 import './Home.css';
-import ImageBg from '../images/bg_hello.png';
 
 const Home = ()=>{
+    const [typeWrite, setTypeWrite] = useState({
+        first: '',
+        second: '',
+        equal: '',
+        third: ''
+    })
+
+    const [sizes, setSizes] = useState({
+        first: 5,
+        second: 10,
+        equal:1,
+        third: 32
+
+    })
+    useEffect(()=>{
+        console.log("use effect")
+        simulateWritting();
+    },[])
+    const simulateWritting = ()=>{
+        console.log("simulate")
+        const first = 'const'
+        const second = 'githubLink'
+        const equal = '='
+        const third = 'https://github.com/GabrielDamian'
+
+
+        iterateWordAndSetState(first,'first')
+        setTimeout(()=>{
+            iterateWordAndSetState(second,'second')
+
+        },1500);
+        setTimeout(()=>{
+            iterateWordAndSetState(equal,'equal')
+        },4000)
+        setTimeout(()=>{
+            iterateWordAndSetState(third,'third')
+        },5000)
+    } 
+
+    const iterateWordAndSetState = (word,target)=>{
+        console.log("here")
+        let chunks = word.match(/.{1}/g);
+        let currentTimeIndex = 1000;
+        chunks.forEach((el)=>{
+            setTimeout(()=>{
+                console.log(el)
+
+                setTypeWrite((prev)=>{
+                    let updated = {...prev}
+                    updated[target] = updated[target] + el
+                    console.log("updated",updated)
+                    return updated
+                })
+            },currentTimeIndex)
+             
+            currentTimeIndex += randomRange(100,200);
+        })
+        console.log(chunks)
+    }
+
+    const randomRange = (min,max)=> {
+
+        // find diff
+        let difference = max - min;
+    
+        // generate random number 
+        let rand = Math.random();
+    
+        // multiply with difference 
+        rand = Math.floor( rand * difference);
+    
+        // add with min value 
+        rand = rand + min;
+    
+        return rand;
+    }
     return(
         <div className='root-right-content' >
             <div className='home-background'>
@@ -28,16 +103,24 @@ const Home = ()=>{
                             </div>
                             <div className='bottom-code-comm'>
                                 <span style={{color: '#4d5bce'}}>
-                                    const &nbsp;
+                                    {typeWrite.first} 
+                                    {typeWrite.first.length == sizes.first ? <span>&nbsp;</span>:null}
                                 </span>
                                 <span style={{color: '#43d9ad'}}>
-                                    githubLink &nbsp;
+                                    {typeWrite.second} 
+                                    {typeWrite.second.length == sizes.second ? <span>&nbsp;</span>:null}
+
                                 </span>
                                 <span style={{color: 'white'}}>
-                                    = &nbsp;
+                                    {typeWrite.equal} 
+                                    {typeWrite.equal.length == sizes.equal ? <span>&nbsp;</span>:null}
+
                                 </span>
                                 <span style={{color: '#e99287'}}>
-                                    https://github.com/ &nbsp;
+                                    {typeWrite.third}
+                                </span>
+                                <span className='pointer-animation'>
+                                    |
                                 </span>
                             </div>
 
@@ -45,7 +128,9 @@ const Home = ()=>{
                     </div>
                 </div>
                 <div className='home-right-content'>
-                    
+                    <div className='blur-behind-me'/>
+                        <div class="div1 cool_anim" id="one"></div>
+                        <div class="div2 cool_anim" id="three"></div>
                 </div>
             </div>
         </div>
