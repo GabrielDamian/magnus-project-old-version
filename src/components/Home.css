@@ -142,6 +142,7 @@
 .cool_anim {
     z-index: 0;
     animation: rotate-all 2s 0 infinite linear alternate;
+    
   }
   
   .div1 {
@@ -249,35 +250,27 @@
     }
     60%{
         /* transform:rotate(50deg); */
-        transform: translate(60px,30px);
+        transform: translate(30px,30px);
     }
     90%{
         /* transform:rotate(20deg); */
-        transform: translate(20px,15px);
+        transform: translate(0px,0px);
     }
-    
 }
 @keyframes hell_rotation_2 {
     0%{
-        /* transform:rotate(0deg); */
         transform: translate(0px,0px);
-        
     }
     30%{
-        /* transform:rotate(20deg); */
         transform: translate(80px,30px);
     }
     60%{
-        /* transform:rotate(50deg); */
-        transform: translate(100px,60px);
+        transform: translate(60px,30px);
     }
     90%{
-        /* transform:rotate(20deg); */
-        transform: translate(60px,50px);
+        transform: translate(0px,0px);
     }
-    
 }
-
   
 /*Blur layer */
 .blur-behind-me
@@ -287,6 +280,6 @@
     position: absolute;
     top:0;
     left:0;
-    backdrop-filter: blur(50px);
+    backdrop-filter: blur(70px);
     z-index: 1;
 }
