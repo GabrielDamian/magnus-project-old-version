@@ -2,14 +2,14 @@
 {
     min-height: 7%;
     width: 100%;
-    border-bottom: 1px solid #474747;
+    border-bottom: 1px solid #1e2d3d;
     display: flex;
 }
 .tab-item
 {
     color: #607b96;
     min-width: 150px;
-    border-right: 1px solid #474747;
+    border-right: 1px solid #1e2d3d;
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
