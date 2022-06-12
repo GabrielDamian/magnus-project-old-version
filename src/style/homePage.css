@@ -10,12 +10,14 @@
     width: 100%;
     background-color: #011627;
     display: flex;
+    border:1px solid red;
 }
 .root-left
 {
     height: 100vh;
     width: 20%;
     border-right: 1px solid #474747;
+    border: 1px solid blue;
 }
 .root-right
 {
@@ -28,6 +30,55 @@
     width: 100%;
     border-bottom: 1px solid #474747;
 }
+.root-left-bottom 
+{
+    height: 93%;
+    border:1px solid magenta;
+    width: 100%;
+}
+/* drop downs */
+.first-drop-down
+{
+    height: 50px;
+    width: 100%;
+    border: 1px solid red;
+    padding: 10px 20px;
+    display: flex;
+    align-items: center;
+}
+.first-drop-down img 
+{
+    height: 30%;
+    object-fit: contain;
+}
+.first-drop-down span 
+{
+    color: white;
+    margin-left: 10px;
+    font-family: 'Fira Sans',sans-serif;
+    font-size: 0.7rem;
+}
+.first-drop-content
+{
+    height: 100px;
+    width: 100%;
+    border: 1px solid yellow;
+}
+.second-drop-down
+{
+    height: 50px;
+    width: 100%;
+    border: 1px solid green;
+}
+.second-drop-content
+{
+    height: 100px;
+    width: 100%;
+    border: 1px solid red;
+}
+
+
+
 
 .root-right-content
 {

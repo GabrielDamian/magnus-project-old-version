@@ -4,6 +4,7 @@ import Dude_1 from '../images/users/dude_1.png';
 import Dude_2 from '../images/users/karen_1.png';
 import Dude_3 from '../images/users/karen_3.png';
 import Dude_4 from '../images/users/scandura.png';
+import Dude_5 from '../images/users/florea_1.png';
 import ReactImg from '../images/Stack/react.png';
 import FigmaImg from '../images/Stack/figma.png';
 import NodeJsImg from '../images/Stack/node.png';
@@ -20,28 +21,50 @@ const usersInfo =[
         image: Dude_1,
         role: 'Full Stack Web Developer',
         frontEnd: ['react','figma'],
-        backEnd: ['nodejs','graphQL']
+        backEnd: ['nodejs','graphQL'],
+        payloadCss: {
+            delayShadowBox: 'delay-box-shadow-1'
+        }
     },
     {
         name: 'Scandura',
         image: Dude_4,
         role: 'Full Stack Web Developer',
         frontEnd: ['react','figma'],
-        backEnd: ['nodejs','graphQL']
+        backEnd: ['nodejs','graphQL'],
+        payloadCss: {
+            delayShadowBox: 'delay-box-shadow-2'
+        }
     },
     {
         name: 'Karen Karen',
         image: Dude_2,
         role: 'Full Stack Web Developer',
         frontEnd: ['react','figma'],
-        backEnd: ['node js','grahpQL']
+        backEnd: ['node js','grahpQL'],
+        payloadCss: {
+            delayShadowBox: 'delay-box-shadow-3'
+        }
     },
     {
         name: 'Karen Karen',
         image: Dude_3,
         role: 'Full Stack Web Developer',
         frontEnd: ['react','figma'],
-        backEnd: ['node js','grahpQL']
+        backEnd: ['node js','grahpQL'],
+        payloadCss: {
+            delayShadowBox: 'delay-box-shadow-4'
+        }
+    },
+    {
+        name: 'Costel',
+        image: Dude_5,
+        role: 'Full Stack Web Developer',
+        frontEnd: ['react','figma'],
+        backEnd: ['node js','grahpQL'],
+        payloadCss: {
+            delayShadowBox: 'delay-box-shadow-4'
+        }
     },
     
 ]
@@ -76,8 +99,14 @@ const UserCard = ({details})=>{
                 return GraphQLImg
         }
     }
+    const logicShadowCustomDelay = (el)=>{
+        let extractClass = el["payloadCss"]["delayShadowBox"]
+        console.log("Extract:", extractClass)
+        return "user-card-container " + extractClass
+    }
+
     return(
-        <div className='user-card-container'>
+        <div className={logicShadowCustomDelay(details)}>
             <div className='profile-pic'>
                 <img src={details.image}/>
             </div>

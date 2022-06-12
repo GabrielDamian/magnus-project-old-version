@@ -3,6 +3,7 @@ import '../style/homePage.css';
 import Home from './_home';
 import TeamPage from './_teamPage';
 import TopBar from './_topBar';
+import DropDownIcon from '../images/icons/drop-down.png';
 
 const HomePage = ()=>{
 
@@ -27,6 +28,24 @@ const HomePage = ()=>{
           <div className='root-left'>
             <div className='root-left-top'>
             </div>
+            <div className="root-left-bottom ">
+              <div className="first-drop-down">
+                <img src={DropDownIcon} alt="drop down"/>
+                <span>personal-info</span>
+              </div>
+              <div className="first-drop-content">
+
+              </div>
+              <div className="first-drop-down">
+                <img src={DropDownIcon} alt="drop down"/>
+                <span>contacts</span>
+              </div>
+              <div className="first-drop-content">
+
+              </div>
+
+            </div>
+
           </div>
           <div className='root-right'>
             <TopBar selectedTab={selectedTab} setSelectedTab={setSelectedTab}/>
