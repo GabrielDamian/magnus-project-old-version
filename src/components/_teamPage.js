@@ -47,16 +47,6 @@ const usersInfo =[
         }
     },
     {
-        name: 'Karen Karen',
-        image: Dude_3,
-        role: 'Full Stack Web Developer',
-        frontEnd: ['react','figma'],
-        backEnd: ['node js','grahpQL'],
-        payloadCss: {
-            delayShadowBox: 'delay-box-shadow-4'
-        }
-    },
-    {
         name: 'Costel',
         image: Dude_5,
         role: 'Full Stack Web Developer',
