@@ -124,7 +124,6 @@
 {
     min-height: 50px;
     padding: 3px 0px 0px 30px;
-    
 }
 .folder-content-elem
 {
@@ -133,6 +132,20 @@
     height: 20px;
     color: #81a1c1;
     margin-bottom:3px;
+}
+.folder-content-elem:hover
+{
+    cursor: pointer;
+}
+.folder-content-elem:hover img 
+{
+    filter: invert(88%) sepia(15%) saturate(306%) hue-rotate(172deg) brightness(95%) contrast(92%);
+    transition: filter 0.3s ease;
+}
+.folder-content-elem:hover span 
+{
+    color: #c4d6e9;
+    transition: color 0.3s ease;
 }
 .folder-content-elem span 
 {

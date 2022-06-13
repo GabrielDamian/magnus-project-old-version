@@ -1,11 +1,13 @@
 import React,{useState, useEffect} from 'react';
 import './TopBar.css';
 
-const TopBar = ({selectedTab,setSelectedTab})=>{
+const TopBar = ({selectedTab,setSelectedTab,navElems})=>{
 
-    const [navElems, setNavElems] = useState(['_hello.js','_team.js'])
+    
+    //'_team.js','_page_1.js'
 
     const handleItemClick = (target)=>{
+        console.log("target:",target);
         setSelectedTab(target);
     }
     return (
@@ -14,13 +16,13 @@ const TopBar = ({selectedTab,setSelectedTab})=>{
                 navElems.map((el,index)=>{
                     var classSelected = 'border-bottom-selected';
                     var textSelected = 'tab-item-center'
-                    if(index == selectedTab)
+                    if(el == selectedTab)
                     {
                         classSelected += ' bg-selected'
                         textSelected += ' color-white'
                     }
                     return (
-                    <div className='tab-item' onClick={()=>handleItemClick(index)}>
+                    <div className='tab-item' onClick={()=>handleItemClick(el)}>
                         <div className={textSelected}>
                             <span>{el}</span>
                         </div>
