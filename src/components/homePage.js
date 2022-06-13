@@ -2,7 +2,8 @@ import React,{useState, useEffect} from 'react';
 import '../style/homePage.css';
 import Home from './_home';
 import TeamPage from './_teamPage';
-import Page_1 from './_page_1';
+import Page_1 from './_workSample.js';
+import AboutUS from './_aboutUs';
 import TopBar from './_topBar';
 import DropDownIcon from '../images/icons/drop-down.png';
 import SectionArrowIcon from '../images/icons/section-arrow.png';
@@ -17,10 +18,25 @@ const HomePage = ()=>{
     const [navElems, setNavElems] = useState(['_hello.js'])
     
     const [collapseSections, setCollapseSections] = useState({
-      bio: true,
-      interests: false,
-      education: false
+      bio: false,
+      team: true,
+      projects: true
     })
+
+    const [collapseBigSections, setCollapseBigSections] = useState({
+      personal_info: false,
+      contacts: false
+    })
+    const handleCollapseBigSections = (who)=>{
+      if(collapseBigSections[who])
+      {
+        return 'none'
+      }
+      else 
+      {
+        return 'block'
+      }
+    }
     useEffect(()=>{
       console.log("collapse updated:",collapseSections)
     },[collapseSections])
@@ -47,20 +63,21 @@ const HomePage = ()=>{
         return 'block'
       }
     }
-    //'_team.js','_page_1.js'
 
     const decideTab = ()=>{
-      //'_hello.js','_team.js','_page_1.js'
       switch(selectedTab)
       {
         case '_hello.js':
           return <Home/>
 
-        case '_team.js':
+        case '_people.js':
           return <TeamPage/>
 
-        case '_page_1.js':
+        case '_workSamples.js':
           return <Page_1/>
+        
+        case '_aboutUs.js':
+          return <AboutUS/>
 
       }
     }
@@ -79,6 +96,15 @@ const HomePage = ()=>{
       }
   
     }
+
+    const handleClickCollapseBigSection = (who)=>{
+      setCollapseBigSections((prev)=>{
+        let copy={...prev}
+        copy[who] = !prev[who]
+        return copy
+      })
+    }
+
     return (
        <div className='root-container'>
           <div className='root-left'>
@@ -86,17 +112,17 @@ const HomePage = ()=>{
             </div>
             <div className="root-left-bottom">
 
-              <div className="first-drop-down">
-                <img src={DropDownIcon} alt="drop down"/>
+              <div className="first-drop-down"  onClick={()=>handleClickCollapseBigSection('personal_info')} >
+                <img src={DropDownIcon} alt="drop down" style={{transform: collapseBigSections['personal_info'] ? 'rotate(-90deg)':'rotate(0deg)'}}/>
                 <span>personal-info</span>
               </div>
-              <div className="first-drop-content">
-                <div className="drop-down-elem-row" onClick={()=>handleCollapse('bio')}>
+              <div className="first-drop-content" style={{display: handleCollapseBigSections('personal_info')}}>
+                <div className="drop-down-elem-row" onClick={()=>handleCollapse('bio')} style={{cursor: 'pointer'}}>
                   <div className="drop-down-elem-arrow">
-                    <img src={SectionArrowIcon}/>
+                    <img src={SectionArrowIcon } style={{transform: collapseSections['bio'] ? 'rotate(-90deg)':'rotate(0deg)'}}/>
                   </div>
                   <div className="drop-down-elem-folder">
-                    <img className="folder_1" src={FolderIcon}/>
+                    <img className="folder_1" src={FolderIcon} />
                   </div>
                   <div className="drop-down-elem-content">
                     <span>bio</span>
@@ -107,9 +133,13 @@ const HomePage = ()=>{
                     <img src={DocumentIcon} />
                     <span>_hello.js</span>
                   </div>
+                  <div className="folder-content-elem" onClick={()=>handleDocumentClick('_aboutUs.js')}>
+                    <img src={DocumentIcon} />
+                    <span>_aboutUs.js</span>
+                  </div>
                   {/* <div className="folder-content-elem">
                     <img src={DocumentIcon} />
-                    <span>_team.js</span>
+                    <span>_people.js</span>
                   </div>
                   <div className="folder-content-elem">
                     <img src={DocumentIcon} />
@@ -117,48 +147,48 @@ const HomePage = ()=>{
                   </div> */}
                 </div>
 
-                <div className="drop-down-elem-row" onClick={()=>handleCollapse('interests')}>
+                <div className="drop-down-elem-row" onClick={()=>handleCollapse('team')} style={{cursor: 'pointer'}}>
                   <div className="drop-down-elem-arrow">
-                    <img src={SectionArrowIcon}/>
+                    <img src={SectionArrowIcon} style={{transform: collapseSections['team'] ? 'rotate(-90deg)':'rotate(0deg)'}}/>
                   </div>
                   <div className="drop-down-elem-folder">
                     <img className="folder_2" src={FolderIcon}/>
                   </div>
                   <div className="drop-down-elem-content">
-                    <span>interests</span>
+                    <span>team</span>
                   </div>
                 </div>
-                <div className="folder-content-container" style={{display:generateCollapse('interests')}}>
-                  <div className="folder-content-elem" onClick={()=>handleDocumentClick('_team.js')}>
+                <div className="folder-content-container" style={{display:generateCollapse('team')}}>
+                  <div className="folder-content-elem" onClick={()=>handleDocumentClick('_people.js')}>
                     <img src={DocumentIcon} />
-                    <span>_team.js</span>
+                    <span>_people.js</span>
                   </div>
                 </div>
-                <div className="drop-down-elem-row" onClick={()=>handleCollapse('education')}>
+                <div className="drop-down-elem-row" onClick={()=>handleCollapse('projects')} style={{cursor: 'pointer'}}>
                   <div className="drop-down-elem-arrow">
-                    <img src={SectionArrowIcon}/>
+                    <img src={SectionArrowIcon} style={{transform: collapseSections['projects'] ? 'rotate(-90deg)':'rotate(0deg)'}}/>
                   </div>
                   <div className="drop-down-elem-folder">
                     <img className="folder_3" src={FolderIcon}/>
                   </div>
                   <div className="drop-down-elem-content">
-                    <span>education</span>
+                    <span>projects</span>
                   </div>
                 </div>
 
-                <div className="folder-content-container" style={{display:generateCollapse('education')}}>
-                  <div className="folder-content-elem" onClick={()=>handleDocumentClick('_page_1.js')}>
+                <div className="folder-content-container" style={{display:generateCollapse('projects')}}>
+                  <div className="folder-content-elem" onClick={()=>handleDocumentClick('_workSamples.js')}>
                     <img src={DocumentIcon} />
-                    <span>_page1.js</span>
+                    <span>_workSamples.js</span>
                   </div>
                 </div>
 
               </div>
-              <div className="first-drop-down">
-                <img src={DropDownIcon} alt="drop down"/>
+              <div className="first-drop-down" onClick={()=>handleClickCollapseBigSection('contacts')}>
+                <img src={DropDownIcon} alt="drop down" style={{transform: collapseBigSections['contacts'] ? 'rotate(-90deg)':'rotate(0deg)'}}/>
                 <span>contacts</span>
               </div>
-              <div className="first-drop-content">
+              <div className="first-drop-content" style={{display: handleCollapseBigSections('contacts')}}>
                 <div className="contacts-container">
                   <div className="contacts-row">
                     <img src={EmailIcon}/>

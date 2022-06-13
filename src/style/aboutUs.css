@@ -1,0 +1,11 @@
+.about-us-container
+{
+    height: 92vh;
+    width: 100%;
+    padding: 30px;
+}
+.about-us-content
+{
+    color: #607b96;
+    font-size: 1.3rem;
+}
