@@ -1,0 +1,129 @@
+.contact-us-container
+{
+    height: 92vh;
+    display: flex;
+}
+.left-contact-container
+{
+    height: 100%;
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-right: 1px solid #1e2d3d;
+}
+.left-contact-center
+{
+    height: 70%;
+    width: 80%;
+}
+.left-contact-field
+{
+    height: 80px;
+    margin-top: 10px;
+}
+.left-contact-field-title
+{
+    height: 40%;
+}
+.left-contact-field-title span
+{
+    color: #607b96;
+    font-family: 'Poppins';
+}
+.left-contact-field-input
+{
+    height: 60%;
+}
+.left-contact-field-input input 
+{
+    height: 100%;
+    border-radius: 10px;
+    outline: none;
+    border: none;
+    width: 100%;
+    border: 2px solid #1e2d3d;
+    background-color: #011221;
+    color: #465e77;
+    padding: 0px 15px;
+    font-size: 1.2rem;
+}
+.left-contact-field-input input:focus 
+{
+    border: 2px solid #607b96;
+}
+.left-contact-field-input textarea:focus 
+{
+    border: 2px solid #607b96;
+}
+.left-contact-field-input textarea 
+{
+    height: 100%;
+    border-radius: 10px;
+    outline: none;
+    border: none;
+    width: 100%;
+    border: 2px solid #1e2d3d;
+    background-color: #011221;
+    color: #465e77;
+    padding: 15px;
+    font-size: 1.2rem;
+    resize: none;
+}
+.left-contact-field-btn
+{
+    height: 100%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+}
+.left-contact-field-btn button 
+{
+    padding: 10px 15px;
+    background-color: #1b2b3a;
+    color: white;
+    font-family: 'Poppins';
+    border-radius: 10px;
+}
+.left-contact-field-btn button:hover
+{
+    background-color: #2d4861;
+    transition: background-color 0.3s ease;
+}
+.right-contact-container
+{
+    height: 100%;
+    width: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.color-0
+{
+    color: #607b96;
+}
+.color-1
+{
+    color: #c98bdf;
+}
+.color-2
+{
+    color: #5565e8;
+}
+.color-3
+{
+    color: #607b96;
+}
+.color-4
+{
+    color: #fea55f;
+}
+
+.right-contact-center
+{
+    height: 60%;
+    width: 80%;
+    color: white;
+    font-family: 'Poppins';
+    font-size: 0.9rem;
+}

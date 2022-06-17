@@ -4,6 +4,7 @@ import Home from './_home';
 import TeamPage from './_teamPage';
 import Page_1 from './_workSample.js';
 import AboutUS from './_aboutUs';
+import ContactUs from './_contactUs';
 import TopBar from './_topBar';
 import DropDownIcon from '../images/icons/drop-down.png';
 import SectionArrowIcon from '../images/icons/section-arrow.png';
@@ -79,6 +80,8 @@ const HomePage = ()=>{
         case '_aboutUs.js':
           return <AboutUS/>
 
+        case '_contactUs.js':
+          return <ContactUs/>
       }
     }
     const handleDocumentClick = (who)=>{
@@ -189,6 +192,7 @@ const HomePage = ()=>{
                 <span>contacts</span>
               </div>
               <div className="first-drop-content" style={{display: handleCollapseBigSections('contacts')}}>
+                
                 <div className="contacts-container">
                   <div className="contacts-row">
                     <img src={EmailIcon}/>
@@ -199,6 +203,11 @@ const HomePage = ()=>{
                   <div className="contacts-row">
                     <img src={PhoneIcon}/>
                     <span>+0754534223</span>
+                  </div>
+                </div>
+                <div className="contacts-container">
+                  <div className="contacts-row-btn">
+                    <button onClick={()=>handleDocumentClick('_contactUs.js')}>Get in touch</button>
                   </div>
                 </div>
 

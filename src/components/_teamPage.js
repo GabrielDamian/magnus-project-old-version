@@ -2,26 +2,32 @@ import React,{useState,useEffect} from 'react';
 import './Team.css';
 import Dude_1 from '../images/users/dude_1.png';
 import Dude_2 from '../images/users/karen_1.png';
-import Dude_3 from '../images/users/karen_3.png';
+import Dude_3 from '../images/users/miron.png';
+
 import Dude_4 from '../images/users/scandura.png';
 import Dude_5 from '../images/users/florea_1.png';
 import ReactImg from '../images/Stack/react.png';
 import FigmaImg from '../images/Stack/figma.png';
 import NodeJsImg from '../images/Stack/node.png';
 import GraphQLImg from '../images/Stack/graphQL.png';
-
+import NextJsImg from '../images/Stack/nextJs.png';
+import MongoDbImg from '../images/Stack/mongoDb.png';
+import SqlImg from '../images/Stack/sql.png';
+import MuiImg from '../images/Stack/mui.png';
+import DjangoImg from '../images/Stack/django.png';
 
 import UpWorkImg from '../images/upWork.png';
 import GitHubImg from '../images/gitHubWhite.png';
 import LinkedInImg from '../images/linkedin.png';
+
 
 const usersInfo =[
     {
         name: 'Damian Gabriel',
         image: Dude_1,
         role: 'Full Stack Web Developer',
-        frontEnd: ['react','figma'],
-        backEnd: ['nodejs','graphQL'],
+        frontEnd: ['ReactJs','NextJs','Figma','Material-UI'],
+        backEnd: ['NodeJs','GraphQL','MongoDb','SQL',],
         payloadCss: {
             delayShadowBox: 'delay-box-shadow-1'
         }
@@ -30,8 +36,8 @@ const usersInfo =[
         name: 'Scandura',
         image: Dude_4,
         role: 'Full Stack Web Developer',
-        frontEnd: ['react','figma'],
-        backEnd: ['nodejs','graphQL'],
+        frontEnd: ['ReactJs','NextJs','Figma','Material-UI'],
+        backEnd: ['NodeJs','GraphQL','MongoDb','DJango'],
         payloadCss: {
             delayShadowBox: 'delay-box-shadow-2'
         }
@@ -40,8 +46,8 @@ const usersInfo =[
         name: 'Karen Karen',
         image: Dude_2,
         role: 'Full Stack Web Developer',
-        frontEnd: ['react','figma'],
-        backEnd: ['node js','grahpQL'],
+        frontEnd: ['ReactJs','NextJs','Figma','Material-UI'],
+        backEnd: ['NodeJs','MongoDb','SQL',],
         payloadCss: {
             delayShadowBox: 'delay-box-shadow-3'
         }
@@ -50,8 +56,18 @@ const usersInfo =[
         name: 'Costel',
         image: Dude_5,
         role: 'Full Stack Web Developer',
-        frontEnd: ['react','figma'],
-        backEnd: ['node js','grahpQL'],
+        frontEnd: ['ReactJs','Material-UI'],
+        backEnd: ['NodeJs','GraphQL','MongoDb','SQL',],
+        payloadCss: {
+            delayShadowBox: 'delay-box-shadow-4'
+        }
+    },
+    {
+        name: 'Costel',
+        image: Dude_3,
+        role: 'Full Stack Web Developer',
+        frontEnd: ['ReactJs','Material-UI'],
+        backEnd: ['NodeJs','GraphQL','MongoDb','SQL',],
         payloadCss: {
             delayShadowBox: 'delay-box-shadow-4'
         }
@@ -79,14 +95,24 @@ const TeamPage = ()=>{
 const UserCard = ({details})=>{
     const SwtichStackImage = (val)=>{
         switch(val){
-            case 'react':
+            case 'ReactJs':
                 return ReactImg
-            case 'figma':
+            case 'Figma':
                 return FigmaImg
-            case 'nodejs':
+            case 'NodeJs':
                 return NodeJsImg
-            case 'graphQL':
+            case 'GraphQL':
                 return GraphQLImg
+            case 'NextJs':
+                return NextJsImg
+            case 'MongoDb':
+                return MongoDbImg
+            case 'SQL':
+                return SqlImg
+            case 'Material-UI':
+                return MuiImg
+            case 'DJango':
+                return DjangoImg
         }
     }
     const logicShadowCustomDelay = (el)=>{
@@ -117,7 +143,7 @@ const UserCard = ({details})=>{
                         {
                             details.frontEnd.map((el)=>{
                                 return(
-                                    <img src={SwtichStackImage(el)}/>
+                                    <img src={SwtichStackImage(el)} title={el}/>
                                 )
                             })
                         }
@@ -131,7 +157,7 @@ const UserCard = ({details})=>{
                     {
                             details.backEnd.map((el)=>{
                                 return(
-                                    <img src={SwtichStackImage(el)}/>
+                                    <img src={SwtichStackImage(el)} title={el}/>
                                 )
                             })
                         }
