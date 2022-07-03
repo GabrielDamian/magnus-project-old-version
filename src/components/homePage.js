@@ -99,7 +99,6 @@ const HomePage = ()=>{
         })
         setSelectedTab(who);
       }
-  
     }
 
     const handleClickCollapseBigSection = (who)=>{
@@ -173,14 +172,6 @@ const HomePage = ()=>{
                   <img src={DocumentIcon} />
                   <span>_aboutUs.js</span>
                 </div>
-                {/* <div className="folder-content-elem">
-                  <img src={DocumentIcon} />
-                  <span>_people.js</span>
-                </div>
-                <div className="folder-content-elem">
-                  <img src={DocumentIcon} />
-                  <span>_ceva.js</span>
-                </div> */}
               </div>
 
               <div className="drop-down-elem-row" onClick={()=>handleCollapse('team')} style={{cursor: 'pointer'}}>
