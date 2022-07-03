@@ -84,6 +84,7 @@
     color: white;
     font-family: 'Poppins';
     border-radius: 10px;
+    border:2px solid #38424b;
 }
 .left-contact-field-btn button:hover
 {

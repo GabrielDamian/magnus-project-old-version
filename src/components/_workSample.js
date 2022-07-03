@@ -1,8 +1,8 @@
 import React from 'react';
 import '../style/workSample.css';
-import CityNeonBg from '../images/workSamples/city-neon.jpg';
-import Neon2 from '../images/workSamples/neon_2.jpg';
-import Neon3 from '../images/workSamples/neon_3.jpg';
+import RealEstatSs from '../images/projects/real_estate.png';
+import TasksAppSs from '../images/projects/task_app.png';
+import MessAppSs from '../images/projects/mess_app.png';
 
 
 import GitHubImg from '../images/gitHubWhite.png';
@@ -11,21 +11,21 @@ export default function Page_1 (){
     const projects = [
         {
             name: 'Real estate app',
-            bgImage: CityNeonBg,
+            bgImage: RealEstatSs,
             desc: 'Lorem Ipsum is simply dummy text of the ndustry. Lorem I',
             gitHub: 'https://github.com/GabrielDamian/real-estate-app',
             link: 'https://real-estate-app-79f7d.web.app/'
         },
         {
             name: 'Task Manager App',
-            bgImage: Neon2,
+            bgImage: TasksAppSs,
             desc: 'A type  only onic typesetting, remaining essentially unchanged',
             gitHub: 'https://github.com/GabrielDamian/TasksApp',
             link: 'https://tasksapp-95af6.web.app/'
         },
         {
             name: 'Chat App',
-            bgImage: Neon3,
+            bgImage: MessAppSs,
             desc: 'It was popularised in the 1960s with the release of Letraset sheets',
             gitHub: 'https://github.com/GabrielDamian/mess-app-git',
             link: 'https://mess-app-2b4bf.web.app/'
@@ -59,14 +59,19 @@ export default function Page_1 (){
                             <div className='work-sample-main-content'>
                                     <div className='work-sample-main-content-img'>
                                         <img src={el.bgImage}/>
+                                        <a href={el.link} target='_blank'/>
                                     </div>
                                     <div className='work-sample-main-content-data'>
                                         <div className='work-sample-main-content-data-top'>
                                             <span>{el.desc}</span>
                                         </div>
                                         <div className='work-sample-main-content-data-bottom'>
-                                            <button className='view-project ' onClick={()=>handleViewProjectClick(el.link)}>view-project</button>
-                                            <img src={GitHubImg} onClick={()=>handleViewProjectClick(el.gitHub)}/>
+                                            <a href={el.link} target='_blank'>
+                                                <button className='view-project ' >view-project</button>
+                                            </a>
+                                            <a href={el.gitHub} target='_blank' className='github-img-redirect'>
+                                                <img src={GitHubImg} />
+                                            </a>
                                         </div>
                                     </div>
                             </div>

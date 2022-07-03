@@ -2,10 +2,7 @@ import React,{useState, useEffect} from 'react';
 import './TopBar.css';
 
 const TopBar = ({selectedTab,setSelectedTab,navElems})=>{
-
     
-    //'_team.js','_page_1.js'
-
     const handleItemClick = (target)=>{
         console.log("target:",target);
         setSelectedTab(target);

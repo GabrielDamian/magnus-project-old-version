@@ -1,6 +1,6 @@
 .root-right-top
 {
-    min-height: 7%;
+    height:62px;
     width: 100%;
     border-bottom: 1px solid #1e2d3d;
     display: flex;
@@ -35,7 +35,7 @@
 }
 .bg-selected
 {
-    background-color: #fea55f;
+    background-color: #4d5bce;
     transition: background-color 0.4s ease;
 }
 .color-white

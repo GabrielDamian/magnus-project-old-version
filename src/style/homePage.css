@@ -11,23 +11,297 @@
     width: 100%;
     background-color: #011627;
     display: flex;
+    display: relative;
 }
+.absolute-loader
+{
+    position: absolute;
+    left:0;
+    top:0;
+    height: 100vh;
+    width: 100%;
+    background-color: #011627;
+    z-index: 10;
+    animation: disolveIntro 4s ease;
+    animation-fill-mode: forwards;
+}
+@keyframes disolveIntro {
+    0%{
+        opacity: 1;
+    }
+    80%{
+        opacity: 1;
+    }
+    90%{
+        opacity: 0;
+        transform: translateX(0%);
+    }
+    100%{
+        transform: translateX(-100%);
+        opacity: 0;
+
+    }
+    
+}
+.loader-logo
+{
+    height: 50%;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    overflow: hidden;
+}
+.loader-logo img 
+{
+    height: 200px;
+    animation: revealLogoIntro 2s ease;    
+}
+@keyframes revealLogoIntro {
+    from{
+        transform: translateY(200%);
+    }
+    to{
+        tranform: tranformY(100%);
+    }
+    
+}
+/* loading animation */
+@keyframes loader {
+    0%, 10%, 100% {
+        width: 80px;
+        height: 80px;
+   }
+    65% {
+        width: 150px;
+        height: 150px;
+   }
+}
+@keyframes loaderBlock {
+    0%, 30% {
+        transform: rotate(0);
+   }
+    55% {
+        background-color: #c21e1e;
+   }
+    100% {
+        transform: rotate(90deg);
+   }
+}
+@keyframes loaderBlockInverse {
+    0%, 20% {
+        transform: rotate(0);
+   }
+    55% {
+        background-color: #c21e1e;
+   }
+    100% {
+        transform: rotate(-90deg);
+   }
+}
+.loader {
+    position: absolute;
+    top: 70%;
+    left: 50%;
+    width: 30px;
+    height: 20px;
+    transform: translate(-50%, -50%) rotate(45deg) translate3d(0, 0, 0);
+    animation: loader 1.2s infinite ease-in-out;
+}
+.loader span {
+    position: absolute;
+    display: block;
+    width: 40px;
+    height: 40px;
+    background-color: #c21e1e;
+    animation: loaderBlock 1.2s infinite ease-in-out both;
+}
+.loader span:nth-child(1) {
+    top: 0;
+    left: 0;
+}
+.loader span:nth-child(2) {
+    top: 0;
+    right: 0;
+    animation: loaderBlockInverse 1.2s infinite ease-in-out both;
+}
+.loader span:nth-child(3) {
+    bottom: 0;
+    left: 0;
+    animation: loaderBlockInverse 1.2s infinite ease-in-out both;
+}
+.loader span:nth-child(4) {
+    bottom: 0;
+    right: 0;
+}
+body {
+    background-color: #584e4a;
+}
+/* end of loading screen */
 .root-left
 {
     height: 100vh;
     width: 20%;
     border: 1px solid #1e2d3d;
 }
+.mobile-menu-container
+{
+    position: absolute;
+    top:0;
+    left:0;
+    height: 60px;
+    width: 60px;
+    display: none;
+    padding: 10px;
+    transform: rotate(0deg);
+    transition: all 0.2s ease;
+}
+.root-right img 
+{
+    height: 100%;
+    object-fit: contain;
+}
+@media  screen and (max-width: 700px) {
+    .root-left
+    {
+        transform: translateX(-300%);
+        transition: all 0.7s ease;
+        width: 800px;
+        height: 90vh;
+        overflow-y: scroll;
+    }
+    .root-right
+    {
+        width: 100%;
+        position: absolute;
+        left:0px;
+        top:0px;
+        overflow: hidden;
+    }
+    .root-right-top
+    {
+        margin-left:60px;
+        overflow-x: scroll;
+        padding-right: 50px;
+    }
+    .tab-item
+    {
+        border-left: 1px solid #1e2d3d;
+    }
+    .mobile-menu-container
+    {
+        display: block;
+    }
+    .first-drop-content 
+    {
+    }
+    .drop-down-elem-row
+    {
+        margin: 10px 0px;
+    }
+    .folder-content-container
+    {
+        height: 100px;
+        padding: 10px 10px 10px 30px !important;
+    }
+    .folder-content-elem
+    {
+        margin-bottom: 20px !important;
+    }
+    .home-right-content
+    {
+        display: none;
+    }
+    .home-background
+    {
+        width: 100%;
+    }
+    .home-left-content
+    {
+        width: 100% !important;
+    }
+    .home-left-center
+    {
+        height: 85% !important;
+        width: 90% !important;
+        word-wrap: break-word !important;
+
+    }
+    .top-code-first
+    {
+        margin-bottom: 10px;
+    }
+    .top-code-second    
+    {
+        margin-bottom: 10px;
+    }
+    
+    .about-us-content
+    {
+        font-size: 0.9rem !important;
+    }
+    .about-us-content p
+    {
+        margin-bottom: 5px;
+    }
+    .work-samples-container
+    {
+        overflow-y: scroll;
+        width: 100%;
+    }
+    .folder-content-container
+    {
+        padding-bottom: 0px !important;
+        height: auto !important;
+    }
+    .left-contact-container
+    {
+        width: 100% !important;
+    }
+    .right-contact-container
+    {
+        display: none !important;
+    }
+  }
+.rotateMe90Deg{
+    transform: rotate(90deg);
+    transition: all 0.2s ease;
+}
+.activateLeftMobileMenu
+{
+    position:absolute;
+    left:0px;
+    top:60px;
+    width: 60%;
+    z-index: 10;
+    background-color: #11365d;
+    transform: translateX(0%);
+    transition: all 0.6s ease;
+}
+
+
+
 .root-right
 {
     height: 100vh;
-    width: 80%;
+    width: 100%;
 }
 .root-left-top
 {
-    min-height: 7%;
+    height: 60px;
     width: 100%;
     /* border-bottom: 1px solid #474747; */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.root-left-top img 
+{
+    height: 80%;
+    object-fit: contain;
 }
 .root-left-bottom 
 {
@@ -56,6 +330,7 @@
     margin-left: 10px;
     font-family: 'Fira Sans',sans-serif;
     font-size: 0.7rem;
+    letter-spacing: 1px;
 }
 .first-drop-content
 {
@@ -182,6 +457,7 @@
 .contacts-container
 {
     height:100%;
+    width:100%;
 }
 .contacts-row
 {
@@ -190,7 +466,13 @@
     padding:0px 10px;
     display: flex;
     align-items: center;
+    word-wrap: break-word;
 }
+.contacts-row span 
+{
+    word-wrap: break-word;
+}
+
 .contacts-row-btn
 {
     min-height: 15px;
@@ -206,10 +488,11 @@
     padding: 2px 15px;
     border-radius: 9px;
     background-color: #80a0c0;
+    /* border:2px solid gray; */
 }
 .contacts-row-btn button:hover
 {
-    background-color: #fea55f;
+    background-color: #4d5bce;
     transition: background-color 0.2s ease;
     color: white;
 }

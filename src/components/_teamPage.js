@@ -19,6 +19,7 @@ import DjangoImg from '../images/Stack/django.png';
 import UpWorkImg from '../images/upWork.png';
 import GitHubImg from '../images/gitHubWhite.png';
 import LinkedInImg from '../images/linkedin.png';
+import WebsiteImgs from '../images/website.png'
 
 
 const usersInfo =[
@@ -30,7 +31,8 @@ const usersInfo =[
         backEnd: ['NodeJs','GraphQL','MongoDb','SQL',],
         payloadCss: {
             delayShadowBox: 'delay-box-shadow-1'
-        }
+        },
+        socialMedia:[WebsiteImgs,UpWorkImg,GitHubImg,LinkedInImg]
     },
     {
         name: 'Scandura',
@@ -40,7 +42,8 @@ const usersInfo =[
         backEnd: ['NodeJs','GraphQL','MongoDb','DJango'],
         payloadCss: {
             delayShadowBox: 'delay-box-shadow-2'
-        }
+        },
+        socialMedia:[UpWorkImg,GitHubImg,LinkedInImg]
     },
     {
         name: 'Karen Karen',
@@ -50,7 +53,8 @@ const usersInfo =[
         backEnd: ['NodeJs','MongoDb','SQL',],
         payloadCss: {
             delayShadowBox: 'delay-box-shadow-3'
-        }
+        },
+        socialMedia:[UpWorkImg,GitHubImg]
     },
     {
         name: 'Costel',
@@ -60,7 +64,8 @@ const usersInfo =[
         backEnd: ['NodeJs','GraphQL','MongoDb','SQL',],
         payloadCss: {
             delayShadowBox: 'delay-box-shadow-4'
-        }
+        },
+        socialMedia:[UpWorkImg,LinkedInImg]
     },
     {
         name: 'Costel',
@@ -70,7 +75,8 @@ const usersInfo =[
         backEnd: ['NodeJs','GraphQL','MongoDb','SQL',],
         payloadCss: {
             delayShadowBox: 'delay-box-shadow-4'
-        }
+        },
+        socialMedia:[UpWorkImg,GitHubImg]
     },
     
 ]
@@ -166,16 +172,16 @@ const UserCard = ({details})=>{
 
             </div>
             <div className='user-links'>
-                <div className='user-links-item'>
-                    <img src={UpWorkImg} />
-                </div>            
-                <div className='user-links-item'>
-                    <img src={GitHubImg} />
-                </div>            
-                <div className='user-links-item'>
-                    <img src={LinkedInImg} />
-                </div>            
-                </div>
+                {
+                    details.socialMedia.map((a)=>{
+                        return(
+                            <div className='user-links-item'>
+                            <img src={a} />
+                        </div> 
+                        )
+                    })
+                }
+            </div>
         </div>
     )
 }

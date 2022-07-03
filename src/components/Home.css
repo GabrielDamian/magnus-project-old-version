@@ -47,6 +47,7 @@
     align-items: center;
     letter-spacing: 3px;
     animation: leftIntro 1s ease;
+    animation-delay: 3.2s
 }
 .top-code-second
 {
@@ -57,6 +58,8 @@
     justify-content: flex-start;
     align-items: center;
     animation: leftIntro_late_1 1.5s ease;
+    animation-delay: 3.2s
+
 }
 .top-code-third
 {
@@ -68,6 +71,8 @@
     font-weight: 600;
     font-size: 1.4rem;
     animation: leftIntro_late_2 2s ease;
+    animation-delay: 3.2s
+
 }
 
 .bottom-code-text
@@ -81,6 +86,7 @@
     color: #607b96;
     margin: 3px;
     word-spacing: 4px;
+    margin-bottom:10px;
 }
 .pointer-animation
 {

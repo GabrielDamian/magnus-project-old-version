@@ -18,7 +18,9 @@ const Home = ()=>{
     })
     useEffect(()=>{
         console.log("use effect")
-        simulateWritting();
+        setTimeout(()=>{
+            simulateWritting();
+        },3200)
     },[])
     const simulateWritting = ()=>{
         console.log("simulate")
@@ -31,7 +33,6 @@ const Home = ()=>{
         iterateWordAndSetState(first,'first')
         setTimeout(()=>{
             iterateWordAndSetState(second,'second')
-
         },1500);
         setTimeout(()=>{
             iterateWordAndSetState(equal,'equal')
@@ -96,10 +97,13 @@ const Home = ()=>{
                         </div>
                         <div className='bottom-code-text'>
                             <div className='bottom-code-comm'>
-                                <span>//  bla bla ba </span>
+                                <span>//  we build </span>
                             </div>
                             <div className='bottom-code-comm'>
-                                <span>//  asd w wf 3 wed d was</span>
+                                <span>//  landing pages, websites, </span>
+                            </div>
+                            <div className='bottom-code-comm'>
+                                <span>//web paltforms, anything browsers can show :))</span>
                             </div>
                             <div className='bottom-code-comm'>
                                 <span style={{color: '#4d5bce'}}>
