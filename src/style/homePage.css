@@ -166,7 +166,7 @@ body {
 @media  screen and (max-width: 800px) {
     .root-left
     {
-        transform: translateX(-300%);
+        transform: translateX(-100%);
         transition: all 0.7s ease;
         width: 800px;
         height: 90vh;
@@ -274,6 +274,8 @@ body {
         object-fit: contain;
         width: 100%;
     }
+    
+
   }
 .rotateMe90Deg{
     transform: rotate(90deg);
