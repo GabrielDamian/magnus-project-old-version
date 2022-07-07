@@ -103,7 +103,7 @@ const Home = ()=>{
                                 <span>//  landing pages, websites, </span>
                             </div>
                             <div className='bottom-code-comm'>
-                                <span>//web paltforms, anything browsers can show :))</span>
+                                <span>//web paltforms, anything related to browsers</span>
                             </div>
                             <div className='bottom-code-comm'>
                                 <span style={{color: '#4d5bce'}}>

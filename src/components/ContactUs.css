@@ -77,7 +77,7 @@
     display: flex;
     align-items: center;
 }
-.left-contact-field-btn button 
+.left-contact-field-btn 
 {
     padding: 10px 15px;
     background-color: #1b2b3a;
@@ -86,7 +86,7 @@
     border-radius: 10px;
     border:2px solid #38424b;
 }
-.left-contact-field-btn button:hover
+.left-contact-field-btn:hover
 {
     background-color: #2d4861;
     transition: background-color 0.3s ease;

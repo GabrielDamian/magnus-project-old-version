@@ -1,17 +1,15 @@
-import React,{useState,useEffect} from 'react';
+import React,{useState,useEffect,useRef} from 'react';
+import emailjs from '@emailjs/browser';
 import './ContactUs.css';
 
 export default function ContactUs()
 {
-
     const [name,setName] = useState('');
     const [email,setEmail] = useState('');
     const [content,setContent] = useState('');
 
-    useEffect(()=>{
-        console.log(name, email,content);
-
-    },[name, email, content])
+    const [eroare, setEroare] = useState('');
+    const [succes, setSucces] = useState('');
 
     const handleUpdate = (event)=>{
         switch(event.target.name)
@@ -35,7 +33,24 @@ export default function ContactUs()
           })
         return ceva;
     }
+      
+    const sendEmail = (e) => {
+        e.preventDefault();
+    
+        emailjs.sendForm('service_2dqo4st', 'template_s21ul4v', form.current, '1tLfezjxHi-ZUipNB')
+        .then((result) => {
+            setSucces('Tank you for your email!')
+            setName('')
+            setEmail('')
+            setContent('')
+        }, (error) => {
+            setEroare('Failed to send email. Please try again.')
+        });
+    };
+  
+    const form = useRef();
     return (
+        <>
         <div className='contact-us-container'>
             <div className='left-contact-container'>
                 <div className='left-contact-center'>
@@ -44,7 +59,7 @@ export default function ContactUs()
                             <span>_name:</span>
                         </div>
                         <div className='left-contact-field-input'>
-                            <input name='name' onChange={handleUpdate}></input>
+                            <input name='name' onChange={handleUpdate} value={name}></input>
                         </div>
                     </div>
                     <div className='left-contact-field'>
@@ -52,7 +67,7 @@ export default function ContactUs()
                             <span>_email:</span>
                         </div>
                         <div className='left-contact-field-input'>
-                            <input name='email' onChange={handleUpdate}></input>
+                            <input name='email' onChange={handleUpdate} value={email}></input>
                         </div>
                     </div>
                     <div className='left-contact-field' style={{height: '150px'}}>
@@ -60,13 +75,21 @@ export default function ContactUs()
                             <span>_message:</span>
                         </div>
                         <div className='left-contact-field-input' style={{height:'70%'}}>
-                            <textarea name='content' onChange={handleUpdate}></textarea>
+                            <textarea name='content' onChange={handleUpdate} value={content}></textarea>
                         </div>
                     </div>
                     <div className='left-contact-field' style={{height: '50px',marginTop:'20px'}}>
-                        <div className='left-contact-field-btn'>
-                            <button>submit-message</button>
-                        </div>
+                        <form ref={form} onSubmit={sendEmail} novalidate>
+                            <label style={{display:'none'}}>Name</label>
+                            <input style={{display:'none'}} type="text" name="user_name" value={name}/>
+                            <label style={{display:'none'}}>Email</label>
+                            <input style={{display:'none'}}  name="user_email" value={email} type="hidden"/>
+                            <label style={{display:'none'}}>Message</label>
+                            <textarea style={{display:'none'}} name="message" value={content}/>
+                            <input  className='left-contact-field-btn' style={{display:'inline'}} type="submit" value="Send" />
+                        </form>
+                        <span style={{color:'red', width:'100%'}}>{eroare}</span>
+                        <span style={{color:'green'}}>{succes}</span>
                     </div>
                 </div>
             </div>
@@ -87,5 +110,7 @@ export default function ContactUs()
                 </div>
             </div>
         </div>
+        </>
+        
     )
 }

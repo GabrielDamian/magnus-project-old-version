@@ -4,7 +4,6 @@ import RealEstatSs from '../images/projects/real_estate.png';
 import TasksAppSs from '../images/projects/task_app.png';
 import MessAppSs from '../images/projects/mess_app.png';
 
-
 import GitHubImg from '../images/gitHubWhite.png';
 
 export default function Page_1 (){
@@ -12,24 +11,23 @@ export default function Page_1 (){
         {
             name: 'Real estate app',
             bgImage: RealEstatSs,
-            desc: 'Lorem Ipsum is simply dummy text of the ndustry. Lorem I',
+            desc: 'Real Estate MarketPlace. Buy and sell proprierties based in location and other facilities.',
             gitHub: 'https://github.com/GabrielDamian/real-estate-app',
             link: 'https://real-estate-app-79f7d.web.app/'
         },
         {
             name: 'Task Manager App',
             bgImage: TasksAppSs,
-            desc: 'A type  only onic typesetting, remaining essentially unchanged',
+            desc: 'Complete CRUD App to manage work time and task status.',
             gitHub: 'https://github.com/GabrielDamian/TasksApp',
             link: 'https://tasksapp-95af6.web.app/'
         },
         {
             name: 'Chat App',
             bgImage: MessAppSs,
-            desc: 'It was popularised in the 1960s with the release of Letraset sheets',
+            desc: 'Chat App with friend list feature and live message chat.',
             gitHub: 'https://github.com/GabrielDamian/mess-app-git',
             link: 'https://mess-app-2b4bf.web.app/'
-
         }    
     ]
     const handleViewProjectClick = (dest)=>{
@@ -45,7 +43,6 @@ export default function Page_1 (){
                                 <span style={{
                                     color: '#5565e8',
                                     fontWeight: 'bold'
-                                    
                                     }}>
                                     Project {index} 
                                 </span>

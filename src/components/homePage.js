@@ -220,15 +220,15 @@ const HomePage = ()=>{
               <div className="contacts-container">
                 <div className="contacts-row">
                   <img src={EmailIcon}/>
-                  <span>{mobileMenuOpen?'costelCostelus33@...':'costelCostelus33@gmail.com'}</span>
+                  <span>{mobileMenuOpen?'costelCostelus33@...':'magnusteam99@gmail.com'}</span>
                 </div>
               </div>
-              <div className="contacts-container">
+              {/* <div className="contacts-container">
                 <div className="contacts-row">
                   <img src={PhoneIcon}/>
                   <span>+0754534223</span>
                 </div>
-              </div>
+              </div> */}
               <div className="contacts-container">
                 <div className="contacts-row-btn">
                   <button onClick={()=>handleDocumentClick('_contactUs.js')}>Get in touch</button>

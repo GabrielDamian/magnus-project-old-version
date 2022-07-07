@@ -3,7 +3,6 @@ import './Team.css';
 import Dude_1 from '../images/users/dude_1.png';
 import Dude_2 from '../images/users/karen_1.png';
 import Dude_3 from '../images/users/miron.png';
-
 import Dude_4 from '../images/users/scandura.png';
 import Dude_5 from '../images/users/florea_1.png';
 import ReactImg from '../images/Stack/react.png';
@@ -15,70 +14,128 @@ import MongoDbImg from '../images/Stack/mongoDb.png';
 import SqlImg from '../images/Stack/sql.png';
 import MuiImg from '../images/Stack/mui.png';
 import DjangoImg from '../images/Stack/django.png';
-
+import PhotohopImg from '../images/Stack/photoshop.png';
 import UpWorkImg from '../images/upWork.png';
 import GitHubImg from '../images/gitHubWhite.png';
 import LinkedInImg from '../images/linkedin.png';
 import WebsiteImgs from '../images/website.png'
-
+import JiraImg from '../images/Stack/jira.png';
 
 const usersInfo =[
     {
-        name: 'Damian Gabriel',
+        name: 'Gabriel Damian',
         image: Dude_1,
         role: 'Full Stack Web Developer',
-        frontEnd: ['ReactJs','NextJs','Figma','Material-UI'],
-        backEnd: ['NodeJs','GraphQL','MongoDb','SQL',],
+        stack:{
+            frontEnd: ['ReactJs','NextJs','Figma','Material-UI'],
+            backEnd: ['NodeJs','GraphQL','MongoDb','SQL',],
+        },
         payloadCss: {
             delayShadowBox: 'delay-box-shadow-1'
         },
-        socialMedia:[WebsiteImgs,UpWorkImg,GitHubImg,LinkedInImg]
+        socialMedia:[
+            {
+                img: WebsiteImgs,
+                link: 'https://damian-gabriel-portfolio.tk/' 
+            },
+            {
+                img: UpWorkImg,
+                link: 'https://www.upwork.com/'
+            },
+            {
+                img:GitHubImg,
+                link:'https://github.com/GabrielDamian'
+            },
+            {
+                img:LinkedInImg,
+                link:'https://www.linkedin.com/in/gabriel-damian-829a98122/'
+            }
+    ]
+        // [WebsiteImgs,UpWorkImg,GitHubImg,LinkedInImg]
     },
     {
-        name: 'Scandura',
+        name: 'Robert Tuianu',
         image: Dude_4,
         role: 'Full Stack Web Developer',
-        frontEnd: ['ReactJs','NextJs','Figma','Material-UI'],
-        backEnd: ['NodeJs','GraphQL','MongoDb','DJango'],
+        stack:{
+            frontEnd: ['ReactJs','NextJs','Material-UI'],
+            backEnd: ['NodeJs','MongoDb','DJango','SQL'],
+        },
         payloadCss: {
             delayShadowBox: 'delay-box-shadow-2'
         },
-        socialMedia:[UpWorkImg,GitHubImg,LinkedInImg]
+        socialMedia:[{
+            img: GitHubImg,
+            link: 'https://github.com/Robertzzel'
+        },
+        {
+            img: LinkedInImg,
+            link: 'https://www.linkedin.com/in/robert-tutuianu-955535216/'
+        }
+    ]
     },
     {
-        name: 'Karen Karen',
+        name: 'Denisa Manelista',
         image: Dude_2,
-        role: 'Full Stack Web Developer',
-        frontEnd: ['ReactJs','NextJs','Figma','Material-UI'],
-        backEnd: ['NodeJs','MongoDb','SQL',],
+        role: 'Web Designer',
+        stack:{
+            Stack:['Figma','Photohop']
+        },
         payloadCss: {
             delayShadowBox: 'delay-box-shadow-3'
         },
-        socialMedia:[UpWorkImg,GitHubImg]
+        socialMedia:[
+        {
+            img: GitHubImg,
+            link: 'https://github.com/ElenaDenisa-Chelarasu'
+        },
+        {
+            img: LinkedInImg,
+            link: 'https://www.linkedin.com/in/elena-denisa-chelarasu/' 
+        },
+        ]
     },
+   
     {
-        name: 'Costel',
+        name: 'Daniel Florea',
         image: Dude_5,
-        role: 'Full Stack Web Developer',
-        frontEnd: ['ReactJs','Material-UI'],
-        backEnd: ['NodeJs','GraphQL','MongoDb','SQL',],
+        role: 'Scrum Master',
+        stack:{
+            stack: ['Jira']
+        },
         payloadCss: {
             delayShadowBox: 'delay-box-shadow-4'
         },
-        socialMedia:[UpWorkImg,LinkedInImg]
+        socialMedia:[{
+            img: GitHubImg,
+            link: 'https://github.com/AlexFlorea02' 
+        },
+        {
+            img: LinkedInImg,
+            link: 'https://www.linkedin.com/in/alex-florea-5396ab108/'
+        }]
     },
     {
-        name: 'Costel',
+        name: 'Alex Miron',
         image: Dude_3,
-        role: 'Full Stack Web Developer',
-        frontEnd: ['ReactJs','Material-UI'],
-        backEnd: ['NodeJs','GraphQL','MongoDb','SQL',],
+        role: 'General Tank Purpose',
+        stack:{
+            frontEnd: ['ReactJs','NextJs'],
+            backEnd: ['NodeJs','MongoDb','SQL',],
+        },
         payloadCss: {
             delayShadowBox: 'delay-box-shadow-4'
         },
-        socialMedia:[UpWorkImg,GitHubImg]
+        socialMedia:[{
+            img: GitHubImg,
+            link: 'https://github.com/Marioalexsan'
+        },
+        {
+            img: LinkedInImg,
+            link: 'https://www.linkedin.com/in/alexandru-miron-96175823a/'
+        }
+    ]
     },
-    
 ]
 const TeamPage = ()=>{
     return(
@@ -119,6 +176,10 @@ const UserCard = ({details})=>{
                 return MuiImg
             case 'DJango':
                 return DjangoImg
+            case 'Photohop':
+                return PhotohopImg
+            case 'Jira':
+                return JiraImg
         }
     }
     const logicShadowCustomDelay = (el)=>{
@@ -141,43 +202,36 @@ const UserCard = ({details})=>{
                 </div>
             </div>
             <div className='user-stack'>
-                <div class='user-stack-row'>
-                    <div class='user-stack-row-for'>
-                        <span>Front End</span>
-                    </div>
-                    <div className='user-stack-row-items'>
-                        {
-                            details.frontEnd.map((el)=>{
-                                return(
-                                    <img src={SwtichStackImage(el)} title={el}/>
-                                )
-                            })
-                        }
-                    </div>
-                </div>
-                <div class='user-stack-row'>
-                    <div class='user-stack-row-for'>
-                        <span>Back End</span>
-                    </div>
-                    <div className='user-stack-row-items'>
-                    {
-                            details.backEnd.map((el)=>{
-                                return(
-                                    <img src={SwtichStackImage(el)} title={el}/>
-                                )
-                            })
-                        }
-                    </div>
-                </div>
-
+                {
+                    Object.keys(details.stack).map((stackRow)=>{
+                        return (
+                            <div class='user-stack-row'>
+                                <div class='user-stack-row-for'>
+                                    <span>{stackRow}</span>
+                                </div>
+                                <div className='user-stack-row-items'>
+                                    {
+                                        details.stack[stackRow].map((el)=>{
+                                            return(
+                                                <img src={SwtichStackImage(el)} title={el}/>
+                                            )
+                                        })
+                                    }
+                                </div>
+                            </div>
+                        )
+                    })
+                }
             </div>
             <div className='user-links'>
                 {
                     details.socialMedia.map((a)=>{
                         return(
                             <div className='user-links-item'>
-                            <img src={a} />
-                        </div> 
+                                <a href={a.link} target='_blank'>
+                                    <img src={a.img} />
+                                </a>
+                            </div> 
                         )
                     })
                 }
